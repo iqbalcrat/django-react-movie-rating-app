@@ -1,1 +1,0 @@
-# django-react-movie-rating-app
