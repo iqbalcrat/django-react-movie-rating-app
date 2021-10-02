@@ -1,11 +1,18 @@
 import React, {useState, useEffect} from 'react'
 import './App.css';
+import MovieList from './componenets/movie-list';
+import MovieDetails from './componenets/movie-details';
 
 function App() {
 
   const [movies, setMovie] = useState([])
+  const [selectedMovie, setSelectedMovie] = useState(null)
 
+  const movieClicked = movie =>{
 
+    setSelectedMovie(movie)
+
+  }
   //Fetching the movie list and dumping it into movies variable above
   useEffect(() => {
 
@@ -30,15 +37,8 @@ function App() {
       </header>
       <div className="layout">
 
-      <div>
-      { movies.map( movie => {
-
-        return <h2>{movie.title}</h2>
- 
-      })}
-
-      </div>
-        <div>Movie details</div>
+        <MovieList movies={movies} movieClk={movieClicked}/>
+        <MovieDetails movie={selectedMovie}/>
 
       </div>
         
