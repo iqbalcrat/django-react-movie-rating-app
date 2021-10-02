@@ -10,7 +10,7 @@ function MovieList(props){
 
     }
 
-    const editClicked = movie => evt =>{
+    const editClicked = movie => {
         props.editClicked(movie)
     }
 
@@ -22,7 +22,9 @@ function MovieList(props){
         return (
         
         <div key={movie.id}>
-            <h2 onClick={ evt => movieClicked(movie)}>{movie.title} &nbsp; <EditIcon color="primary" onclick={() =>{editClicked(movie)}}/>&nbsp; <DeleteIcon color="primary" /></h2>
+            <h2 onClick={ evt => movieClicked(movie)}>{movie.title} &nbsp; </h2>
+            <EditIcon color="primary" onClick={ evt => editClicked(movie)}/>
+            <DeleteIcon color="primary" />
             
 
         </div>

@@ -4,7 +4,7 @@ import React from "react";
 export default function MovieForm(props){
 
     return(
-        <h1>Edit movie here</h1>
+        <h1>{props.movie && props.movie.title} edit</h1>
     )
 
 }

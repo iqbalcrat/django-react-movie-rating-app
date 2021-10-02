@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './App.css';
 import MovieList from './componenets/movie-list';
 import MovieDetails from './componenets/movie-details';
+import MovieForm from './componenets/movie-form';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
 
         <MovieList movies={movies} movieClk={movieClicked} editClicked={editClicked}/>
         <MovieDetails movie={selectedMovie} updateMovie={loadMovie}/>
+        <MovieForm movie={editedMovie}/>
 
       </div>
         
