@@ -7,11 +7,22 @@ function App() {
 
   const [movies, setMovie] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const [editedMovie, setEditMovie] = useState(null)
 
   const movieClicked = movie =>{
 
     setSelectedMovie(movie)
 
+  }
+
+  const editClicked = movie =>{
+
+    setEditMovie(movie)
+
+  }
+
+  const loadMovie = movie =>{
+    setSelectedMovie(movie)
   }
   //Fetching the movie list and dumping it into movies variable above
   useEffect(() => {
@@ -37,8 +48,8 @@ function App() {
       </header>
       <div className="layout">
 
-        <MovieList movies={movies} movieClk={movieClicked}/>
-        <MovieDetails movie={selectedMovie}/>
+        <MovieList movies={movies} movieClk={movieClicked} editClicked={editClicked}/>
+        <MovieDetails movie={selectedMovie} updateMovie={loadMovie}/>
 
       </div>
         
